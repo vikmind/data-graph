@@ -2,7 +2,7 @@
 
 Attempt to visualize dependency graph for Rails project
 
-![Result](https://raw.githubusercontent.com/vikmind/data-graph/master/info.png)
+![Result](https://github.com/vikmind/data-graph/raw/master/info.png)
 
 ## Deps
 
