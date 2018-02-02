@@ -1,0 +1,27 @@
+{
+  "name": "graph-data",
+  "version": "0.5.0",
+  "description": "Attempt to visualize dependency graph for Rails project",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vikmind/data-graph.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vikmind/data-graph/issues"
+  },
+  "homepage": "https://github.com/vikmind/data-graph#readme",
+  "devDependencies": {
+    "babel-preset-env": "^1.6.1",
+    "parcel-bundler": "^1.5.1"
+  },
+  "dependencies": {
+    "cytoscape": "^3.2.8"
+  }
+}
