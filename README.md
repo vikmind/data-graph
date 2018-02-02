@@ -2,6 +2,8 @@
 
 Attempt to visualize dependency graph for Rails project
 
+![Result](https://raw.githubusercontent.com/vikmind/data-graph/info.png)
+
 ## Deps
 
 Graph library [Cytoscape](http://js.cytoscape.org/)
