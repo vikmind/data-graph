@@ -1,3 +1,4 @@
+Rails.application.eager_load!
 ApplicationRecord.descendants.map{|model|
   out = {}
   out[model.to_s] = model.reflect_on_all_associations.map{ |i|

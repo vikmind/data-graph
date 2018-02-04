@@ -5,7 +5,8 @@
   "main": "script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel index.html"
+    "start": "parcel index.html",
+    "deploy": "parcel build index.html --public-url ./ && cd dist && git add --all && git commit -m \"$(date -u \"+%Y-%m-%dT%H:%M\")\" && git push && cd .."
   },
   "repository": {
     "type": "git",

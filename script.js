@@ -6,6 +6,7 @@ const elements = [
     return {
       data: {
         id: prop,
+        type: 'node',
         data: item[prop],
       }
     };
@@ -14,7 +15,14 @@ const elements = [
     const prop = Object.keys(item)[0];
     if (!!item[prop]) {
       ar.push(
-        ...item[prop].map(assoc => ({ data: { id: `${prop}${assoc.to}`, source: prop, target: assoc.to }}))
+        ...item[prop].map(assoc => ({
+          data: {
+            id: `${prop}${assoc.to}`,
+            type: 'edge',
+            source: prop,
+            target: assoc.to
+          },
+        }))
       );
     }
     return ar;
@@ -46,6 +54,6 @@ const cy = cytoscape({
 
   layout: {
     name: 'grid',
-    rows: 4
+    rows: 6
   }
 });
