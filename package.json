@@ -1,6 +1,6 @@
 {
   "name": "graph-data",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Attempt to visualize dependency graph for Rails project",
   "main": "script.js",
   "scripts": {
