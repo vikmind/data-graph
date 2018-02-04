@@ -1,0 +1,2712 @@
+[
+  {
+    "Alert": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Monit"
+      }
+    ]
+  },
+  {
+    "CheckerActivityLog": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Checker"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckerActivityJournal"
+      }
+    ]
+  },
+  {
+    "EventJournal": [
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckerJournal"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Checker"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Card"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "OperatorLabel"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "TerminalRole"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "EventTerminalRole"
+      }
+    ]
+  },
+  {
+    "EventsUser": [
+      {
+        "assoc": "HasMany",
+        "to": "Activity"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "User"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Issuer"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Vendor"
+      }
+    ]
+  },
+  {
+    "Monit": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "Alert"
+      }
+    ]
+  },
+  {
+    "Operation": [
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckersEvent"
+      }
+    ]
+  },
+  {
+    "PrepaidPaymentBase": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Card"
+      }
+    ]
+  },
+  {
+    "TerminalRole": [
+      {
+        "assoc": "HasMany",
+        "to": "Activity"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Issuer"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Vendor"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "CheckersEvent"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "Tip"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "CashierPackage"
+      },
+      {
+        "assoc": "HasAndBelongsToMany",
+        "to": "EventToken"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "ProductsTerminalRole"
+      }
+    ]
+  },
+  {
+    "Wallet": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Target"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "EventToken"
+      }
+    ]
+  },
+  {
+    "User": [
+      {
+        "assoc": "HasMany",
+        "to": "Activity"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "Card"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "OnlineCard"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "OwnedCard"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "Ticket"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "EventsUser"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "EventsUsersVendor"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "EventsUsersWebVendor"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "EventsUsersManager"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "OnlineUser"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "Purchase"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "SentTicketTransfer"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "ReceivedTicketTransfer"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "PersonalCardRequest"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "JcUserInfo"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "TrackableNotification"
+      }
+    ]
+  },
+  {
+    "JcVendor": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Vendor"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "JcProductsJcVendor"
+      }
+    ]
+  },
+  {
+    "Card": [
+      {
+        "assoc": "HasMany",
+        "to": "Activity"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "User"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "SetOfCard"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "Ticket"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "WhiteList"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "CashlessEventCard"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "CashlessRequest"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "Blacklist"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "PrepaidPayment"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "EventJournal"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "Wallet"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "CardBalance"
+      },
+      {
+        "assoc": "HasOne",
+        "to": "ContactInfo"
+      },
+      {
+        "assoc": "HasOne",
+        "to": "PersonalCardRequest"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "LedgerOfCard"
+      }
+    ]
+  },
+  {
+    "CashlessRequest": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Card"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      }
+    ]
+  },
+  {
+    "Event": [
+      {
+        "assoc": "HasMany",
+        "to": "Activity"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "Ticket"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "ClientsEvent"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "CardBalance"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "EventsUser"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "AppUser"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "OnlineUser"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "VendorUser"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "EventsUsersManager"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "CheckersEvent"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "InventoryJournal"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "Purchase"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "WhiteList"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "Blacklist"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "PrepaidPayment"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "PrepaidStripePayment"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "EventJournal"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "CashlessEventCard"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "Gift"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "TypeOfTicket"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "EventTokenBlock"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "Brigadier"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "EmailTemplate"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "OperatorLabel"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "CashlessRequest"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "CheckerErrorLog"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "CheckerActivityLog"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "EventToken"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "TypeOfCard"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "TerminalRole"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "Vendor"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "TrackableNotification"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "JcVendor"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "JcProduct"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "JcUserInfo"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "JcStaff"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "Product"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "ProductsPackage"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "StripeConnectAccount"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "Issuer"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "LedgerOfCard"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "Monit"
+      }
+    ]
+  },
+  {
+    "LedgerOfCard": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Card"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "EventJournal"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "EventToken"
+      }
+    ]
+  },
+  {
+    "Purchase": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Client"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "User"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "PurchasedTicket"
+      },
+      {
+        "assoc": "HasOne",
+        "to": "ShippingAddress"
+      }
+    ]
+  },
+  {
+    "Tip": [
+      {
+        "assoc": "BelongsTo",
+        "to": "TerminalRole"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "EventToken"
+      }
+    ]
+  },
+  {
+    "TypeOfCard": [
+      {
+        "assoc": "HasMany",
+        "to": "Activity"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Issuer"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "WhiteList"
+      },
+      {
+        "assoc": "HasAndBelongsToMany",
+        "to": "EventToken"
+      }
+    ]
+  },
+  {
+    "Blacklist": [
+      {
+        "assoc": "BelongsTo",
+        "to": "User"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Card"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckerActivityLog"
+      }
+    ]
+  },
+  {
+    "Brigadier": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "OperatorLabel"
+      }
+    ]
+  },
+  {
+    "CardBalance": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Card"
+      }
+    ]
+  },
+  {
+    "CardPermission": []
+  },
+  {
+    "CardRegistration": [
+      {
+        "assoc": "BelongsTo",
+        "to": "User"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Card"
+      }
+    ]
+  },
+  {
+    "CashierPackage": [
+      {
+        "assoc": "BelongsTo",
+        "to": "ProductsPackage"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "TerminalRole"
+      }
+    ]
+  },
+  {
+    "CashlessEventCard": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Card"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "EventToken"
+      }
+    ]
+  },
+  {
+    "Checker": [
+      {
+        "assoc": "HasMany",
+        "to": "CheckersEvent"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "EventJournal"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "CheckerErrorLog"
+      }
+    ]
+  },
+  {
+    "CheckerActivityJournal": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Checker"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "CheckerActivityLog"
+      }
+    ]
+  },
+  {
+    "CheckerErrorJournal": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Checker"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "CheckerErrorLog"
+      }
+    ]
+  },
+  {
+    "CheckerErrorLog": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Checker"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Card"
+      }
+    ]
+  },
+  {
+    "CheckerJournal": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Checker"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "EventJournal"
+      }
+    ]
+  },
+  {
+    "CheckersEvent": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Checker"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "Operation"
+      }
+    ]
+  },
+  {
+    "Client": [
+      {
+        "assoc": "HasMany",
+        "to": "ClientsEvent"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "Ticket"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "Purchase"
+      }
+    ]
+  },
+  {
+    "ClientsEvent": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Client"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      }
+    ]
+  },
+  {
+    "ContactInfo": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Card"
+      }
+    ]
+  },
+  {
+    "EmailTemplate": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      }
+    ]
+  },
+  {
+    "EventJournalAsJcReport": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      }
+    ]
+  },
+  {
+    "EventToken": [
+      {
+        "assoc": "HasMany",
+        "to": "Activity"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "EventTokenBlock"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "Wallet"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "Tip"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "ProductsToken"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "ProductsPackageItem"
+      },
+      {
+        "assoc": "HasOne",
+        "to": "JcProduct"
+      },
+      {
+        "assoc": "HasAndBelongsToMany",
+        "to": "TerminalRole"
+      },
+      {
+        "assoc": "HasAndBelongsToMany",
+        "to": "TypeOfCard"
+      }
+    ]
+  },
+  {
+    "EventTokenBlock": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "EventToken"
+      }
+    ]
+  },
+  {
+    "Gift": [
+      {
+        "assoc": "HasMany",
+        "to": "Activity"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "User"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "TypeOfTicket"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "OwnedUser"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "Ticket"
+      }
+    ]
+  },
+  {
+    "InventoryJournal": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "User"
+      }
+    ]
+  },
+  {
+    "Issuer": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "TypeOfTicket"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "TerminalRole"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "Vendor"
+      }
+    ]
+  },
+  {
+    "JcProduct": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "EventToken"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Product"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "JcProductsJcVendor"
+      }
+    ]
+  },
+  {
+    "JcProductsJcUserInfo": [
+      {
+        "assoc": "BelongsTo",
+        "to": "JcProduct"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "JcUserInfo"
+      }
+    ]
+  },
+  {
+    "JcProductsJcVendor": [
+      {
+        "assoc": "BelongsTo",
+        "to": "JcProduct"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "JcVendor"
+      }
+    ]
+  },
+  {
+    "JcStaff": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      }
+    ]
+  },
+  {
+    "JcUserInfo": [
+      {
+        "assoc": "BelongsTo",
+        "to": "User"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "JcProductsJcUserInfo"
+      }
+    ]
+  },
+  {
+    "OperatorLabel": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Brigadier"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "EventJournal"
+      }
+    ]
+  },
+  {
+    "PersonalCardRequest": [
+      {
+        "assoc": "BelongsTo",
+        "to": "User"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Card"
+      }
+    ]
+  },
+  {
+    "Product": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "User"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "ProductsToken"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "ProductsTerminalRole"
+      }
+    ]
+  },
+  {
+    "ProductsPackage": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "TypeOfTicket"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Issuer"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "ProductsPackageItem"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "CashierPackage"
+      }
+    ]
+  },
+  {
+    "ProductsPackageItem": [
+      {
+        "assoc": "BelongsTo",
+        "to": "ProductsPackage"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "EventToken"
+      }
+    ]
+  },
+  {
+    "ProductsTerminalRole": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Product"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "TerminalRole"
+      }
+    ]
+  },
+  {
+    "ProductsToken": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Product"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "EventToken"
+      }
+    ]
+  },
+  {
+    "PurchasedTicket": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Purchase"
+      },
+      {
+        "assoc": "HasOne",
+        "to": "Ticket"
+      }
+    ]
+  },
+  {
+    "SetOfCard": [
+      {
+        "assoc": "HasMany",
+        "to": "Card"
+      }
+    ]
+  },
+  {
+    "ShippingAddress": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Purchase"
+      }
+    ]
+  },
+  {
+    "StripeConnectAccount": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "StripeTransfer"
+      }
+    ]
+  },
+  {
+    "StripeTransfer": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "StripeConnectAccount"
+      }
+    ]
+  },
+  {
+    "TerminalPermission": []
+  },
+  {
+    "Ticket": [
+      {
+        "assoc": "HasMany",
+        "to": "Activity"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Card"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "User"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Client"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "PurchasedTicket"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Gift"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "TypeOfTicket"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "TicketTransfer"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "Wallet"
+      }
+    ]
+  },
+  {
+    "TicketTransfer": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Ticket"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "User"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "NewOwner"
+      }
+    ]
+  },
+  {
+    "TrackableNotification": [
+      {
+        "assoc": "BelongsTo",
+        "to": "User"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Card"
+      }
+    ]
+  },
+  {
+    "TypeOfTicket": [
+      {
+        "assoc": "HasMany",
+        "to": "Activity"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "Ticket"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "Gift"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "ProductsPackage"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "Wallet"
+      }
+    ]
+  },
+  {
+    "Vendor": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Issuer"
+      },
+      {
+        "assoc": "HasOne",
+        "to": "JcVendor"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "TerminalRole"
+      },
+      {
+        "assoc": "HasOne",
+        "to": "DefaultTerminalRole"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "WebVendorUser"
+      }
+    ]
+  },
+  {
+    "VerificationCode": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Card"
+      }
+    ]
+  },
+  {
+    "WhiteList": [
+      {
+        "assoc": "HasMany",
+        "to": "Activity"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Card"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "TypeOfCard"
+      }
+    ]
+  },
+  {
+    "Alerts::AlertByEmail": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Monit"
+      }
+    ]
+  },
+  {
+    "Alerts::AlertBySlack": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Monit"
+      }
+    ]
+  },
+  {
+    "CheckerActivityLogs::Personalization": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Checker"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckerActivityJournal"
+      }
+    ]
+  },
+  {
+    "CheckerActivityLogs::ActivateTicket": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Checker"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckerActivityJournal"
+      }
+    ]
+  },
+  {
+    "CheckerActivityLogs::AddToBlacklist": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Checker"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckerActivityJournal"
+      }
+    ]
+  },
+  {
+    "CheckerActivityLogs::RemoveFromBlacklist": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Checker"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckerActivityJournal"
+      }
+    ]
+  },
+  {
+    "CheckerActivityLogs::ResetTotal": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Checker"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckerActivityJournal"
+      }
+    ]
+  },
+  {
+    "CheckerActivityLogs::SendReport": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Checker"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckerActivityJournal"
+      }
+    ]
+  },
+  {
+    "CheckerActivityLogs::SetOperator": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Checker"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckerActivityJournal"
+      }
+    ]
+  },
+  {
+    "CheckerActivityLogs::SetupAdminWristband": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Checker"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckerActivityJournal"
+      }
+    ]
+  },
+  {
+    "CheckerActivityLogs::Sync": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Checker"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckerActivityJournal"
+      }
+    ]
+  },
+  {
+    "CheckerActivityLogs::TimeAction": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Checker"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckerActivityJournal"
+      }
+    ]
+  },
+  {
+    "CheckerActivityLogs::TimeSync": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Checker"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckerActivityJournal"
+      }
+    ]
+  },
+  {
+    "CheckerActivityLogs::TimeSyncManually": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Checker"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckerActivityJournal"
+      }
+    ]
+  },
+  {
+    "EventJournals::Increase": [
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckerJournal"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Checker"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Card"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "OperatorLabel"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "TerminalRole"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "EventTerminalRole"
+      }
+    ]
+  },
+  {
+    "EventJournals::BatchIncrease": [
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckerJournal"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Checker"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Card"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "OperatorLabel"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "TerminalRole"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "EventTerminalRole"
+      }
+    ]
+  },
+  {
+    "EventJournals::GetBalance": [
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckerJournal"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Checker"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Card"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "OperatorLabel"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "TerminalRole"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "EventTerminalRole"
+      }
+    ]
+  },
+  {
+    "EventJournals::PackageIncrease": [
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckerJournal"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Checker"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Card"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "OperatorLabel"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "TerminalRole"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "EventTerminalRole"
+      }
+    ]
+  },
+  {
+    "EventJournals::Redeem": [
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckerJournal"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Checker"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Card"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "OperatorLabel"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "TerminalRole"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "EventTerminalRole"
+      }
+    ]
+  },
+  {
+    "EventJournals::RedeemRollback": [
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckerJournal"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Checker"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Card"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "OperatorLabel"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "TerminalRole"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "EventTerminalRole"
+      }
+    ]
+  },
+  {
+    "EventJournals::TagOffline": [
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckerJournal"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Checker"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Card"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "OperatorLabel"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "TerminalRole"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "EventTerminalRole"
+      }
+    ]
+  },
+  {
+    "EventJournals::IncreaseRollback": [
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckerJournal"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Checker"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Card"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "OperatorLabel"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "TerminalRole"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "EventTerminalRole"
+      }
+    ]
+  },
+  {
+    "EventJournals::BatchIncreaseRollback": [
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckerJournal"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Checker"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Card"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "OperatorLabel"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "TerminalRole"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "EventTerminalRole"
+      }
+    ]
+  },
+  {
+    "EventJournals::BraceletAssignedToCard": [
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckerJournal"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Checker"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Card"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "OperatorLabel"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "TerminalRole"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "EventTerminalRole"
+      }
+    ]
+  },
+  {
+    "EventJournals::BraceletIsBlocked": [
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckerJournal"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Checker"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Card"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "OperatorLabel"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "TerminalRole"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "EventTerminalRole"
+      }
+    ]
+  },
+  {
+    "EventJournals::BraceletReplaced": [
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckerJournal"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Checker"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Card"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "OperatorLabel"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "TerminalRole"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "EventTerminalRole"
+      }
+    ]
+  },
+  {
+    "EventJournals::CheckCard": [
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckerJournal"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Checker"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Card"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "OperatorLabel"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "TerminalRole"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "EventTerminalRole"
+      }
+    ]
+  },
+  {
+    "EventJournals::GoIn": [
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckerJournal"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Checker"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Card"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "OperatorLabel"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "TerminalRole"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "EventTerminalRole"
+      }
+    ]
+  },
+  {
+    "EventJournals::GoOut": [
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckerJournal"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Checker"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Card"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "OperatorLabel"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "TerminalRole"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "EventTerminalRole"
+      }
+    ]
+  },
+  {
+    "EventJournals::PackageIncreaseRollback": [
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckerJournal"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Checker"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Card"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "OperatorLabel"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "TerminalRole"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "EventTerminalRole"
+      }
+    ]
+  },
+  {
+    "EventJournals::PrepaidPaymentAdded": [
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckerJournal"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Checker"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Card"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "OperatorLabel"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "TerminalRole"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "EventTerminalRole"
+      }
+    ]
+  },
+  {
+    "EventJournals::Tag": [
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckerJournal"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Checker"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Card"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "OperatorLabel"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "TerminalRole"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "EventTerminalRole"
+      }
+    ]
+  },
+  {
+    "EventJournals::TagCard": [
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckerJournal"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Checker"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Card"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "OperatorLabel"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "TerminalRole"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "EventTerminalRole"
+      }
+    ]
+  },
+  {
+    "EventJournals::TicketIsChecked": [
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckerJournal"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Checker"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Card"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "OperatorLabel"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "TerminalRole"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "EventTerminalRole"
+      }
+    ]
+  },
+  {
+    "EventsUsers::Manager": [
+      {
+        "assoc": "HasMany",
+        "to": "Activity"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "User"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Issuer"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Vendor"
+      }
+    ]
+  },
+  {
+    "EventsUsers::AppUser": [
+      {
+        "assoc": "HasMany",
+        "to": "Activity"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "User"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Issuer"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Vendor"
+      }
+    ]
+  },
+  {
+    "EventsUsers::OnlineUser": [
+      {
+        "assoc": "HasMany",
+        "to": "Activity"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "User"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Issuer"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Vendor"
+      }
+    ]
+  },
+  {
+    "EventsUsers::VendorUser": [
+      {
+        "assoc": "HasMany",
+        "to": "Activity"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "User"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Issuer"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Vendor"
+      },
+      {
+        "assoc": "HasOne",
+        "to": "TerminalRole"
+      }
+    ]
+  },
+  {
+    "EventsUsers::WebVendorUser": [
+      {
+        "assoc": "HasMany",
+        "to": "Activity"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "User"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Issuer"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Vendor"
+      }
+    ]
+  },
+  {
+    "Monits::CheckErrorLog": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "Alert"
+      }
+    ]
+  },
+  {
+    "Monits::CheckFailedOperation": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "Alert"
+      }
+    ]
+  },
+  {
+    "Monits::TerminalSync": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "Alert"
+      }
+    ]
+  },
+  {
+    "Operations::GetEvent": [
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckersEvent"
+      }
+    ]
+  },
+  {
+    "Operations::GetTicket": [
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckersEvent"
+      }
+    ]
+  },
+  {
+    "Operations::SetupAdminWristband": [
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckersEvent"
+      }
+    ]
+  },
+  {
+    "Operations::SetupOperator": [
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckersEvent"
+      }
+    ]
+  },
+  {
+    "Operations::SendReport": [
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckersEvent"
+      }
+    ]
+  },
+  {
+    "Operations::ClearActivity": [
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckersEvent"
+      }
+    ]
+  },
+  {
+    "Operations::ClearAllActivity": [
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckersEvent"
+      }
+    ]
+  },
+  {
+    "Operations::ClearError": [
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckersEvent"
+      }
+    ]
+  },
+  {
+    "Operations::ClearTransaction": [
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckersEvent"
+      }
+    ]
+  },
+  {
+    "Operations::DestroyEvent": [
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckersEvent"
+      }
+    ]
+  },
+  {
+    "Operations::GetBlacklist": [
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckersEvent"
+      }
+    ]
+  },
+  {
+    "Operations::GetListOfTerminal": [
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckersEvent"
+      }
+    ]
+  },
+  {
+    "Operations::GetVendor": [
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckersEvent"
+      }
+    ]
+  },
+  {
+    "Operations::GetWhiteList": [
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckersEvent"
+      }
+    ]
+  },
+  {
+    "Operations::SendActivity": [
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckersEvent"
+      }
+    ]
+  },
+  {
+    "Operations::SetupIdForCard": [
+      {
+        "assoc": "BelongsTo",
+        "to": "CheckersEvent"
+      }
+    ]
+  },
+  {
+    "PrepaidStripePayment": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Card"
+      }
+    ]
+  },
+  {
+    "PrepaidPayment": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Event"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "Card"
+      }
+    ]
+  },
+  {
+    "Wallets::TicketWallet": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Target"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "EventToken"
+      }
+    ]
+  },
+  {
+    "Wallets::CardWallet": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Target"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "EventToken"
+      }
+    ]
+  },
+  {
+    "Wallets::TypeOfTicketWallet": [
+      {
+        "assoc": "BelongsTo",
+        "to": "Target"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "EventToken"
+      }
+    ]
+  },
+  {
+    "Bracelet": [
+      {
+        "assoc": "HasMany",
+        "to": "Activity"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "User"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "SetOfCard"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "Ticket"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "WhiteList"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "CashlessEventCard"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "CashlessRequest"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "Blacklist"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "PrepaidPayment"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "EventJournal"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "Wallet"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "CardBalance"
+      },
+      {
+        "assoc": "HasOne",
+        "to": "ContactInfo"
+      },
+      {
+        "assoc": "HasOne",
+        "to": "PersonalCardRequest"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "LedgerOfCard"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "AssociatedPlasticCard"
+      }
+    ]
+  },
+  {
+    "OnlineCard": [
+      {
+        "assoc": "HasMany",
+        "to": "Activity"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "User"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "SetOfCard"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "Ticket"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "WhiteList"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "CashlessEventCard"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "CashlessRequest"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "Blacklist"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "PrepaidPayment"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "EventJournal"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "Wallet"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "CardBalance"
+      },
+      {
+        "assoc": "HasOne",
+        "to": "ContactInfo"
+      },
+      {
+        "assoc": "HasOne",
+        "to": "PersonalCardRequest"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "LedgerOfCard"
+      }
+    ]
+  },
+  {
+    "PlasticCard": [
+      {
+        "assoc": "HasMany",
+        "to": "Activity"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "User"
+      },
+      {
+        "assoc": "BelongsTo",
+        "to": "SetOfCard"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "Ticket"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "WhiteList"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "CashlessEventCard"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "CashlessRequest"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "Blacklist"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "PrepaidPayment"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "EventJournal"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "Wallet"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "CardBalance"
+      },
+      {
+        "assoc": "HasOne",
+        "to": "ContactInfo"
+      },
+      {
+        "assoc": "HasOne",
+        "to": "PersonalCardRequest"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "LedgerOfCard"
+      },
+      {
+        "assoc": "HasMany",
+        "to": "AssociatedBracelet"
+      }
+    ]
+  }
+]
