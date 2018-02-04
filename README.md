@@ -1,6 +1,6 @@
 # graph-data
 
-Attempt to visualize dependency graph for Rails project
+Attempt to visualize ActiveRecord entities graph for Rails project
 
 ![Result](https://github.com/vikmind/data-graph/raw/master/info.png)
 
