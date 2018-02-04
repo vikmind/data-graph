@@ -14,3 +14,8 @@ Build with [Parcel](https://parceljs.org/)
 
 1. ```npm install```
 1. ```npm start```
+
+## Deploy
+
+1. First time only: ```npm run setup```
+1. ```npm run deploy```
